@@ -24,6 +24,13 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+.secondary-wrapper {
+    width: 5rem;
+    height: 25em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     align-items: center;
 }
 .icon-wrapper {
@@ -51,4 +58,13 @@ body {
     width: 60px;
     height: 60px;
     filter: invert(1);
+}
+
+.side-arrow {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 30px;
+    margin-left: -0.69rem;
+    border: 5px solid rgb(30,30,30);
+    background-color: white;
 }
