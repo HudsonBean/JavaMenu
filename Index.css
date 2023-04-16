@@ -67,4 +67,25 @@ body {
     margin-left: -0.69rem;
     border: 5px solid rgb(30,30,30);
     background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.15s ease;
+}
+.side-arrow img {
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+.side-arrow:hover {
+    width: 2.5rem;
+    height: 2.5rem;
+    background-color: rgb(30,30,30);
+    border: 5px solid white;
+    box-shadow: 0 0 10px white;
+    margin-left: 0rem;
+}
+.side-arrow:hover img {
+    width: 30px;
+    height: 30px;
+    filter: invert(1);
 }
