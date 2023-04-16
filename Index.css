@@ -57,7 +57,7 @@ body {
 .icon-wrapper:hover img {
     width: 60px;
     height: 60px;
-    filter: invert(1);
+    filter: invert(1) drop-shadow(0 0 5px white);
 }
 
 .side-arrow {
@@ -87,5 +87,5 @@ body {
 .side-arrow:hover img {
     width: 30px;
     height: 30px;
-    filter: invert(1);
+    filter: invert(1) drop-shadow(0 0 5px white);
 }
