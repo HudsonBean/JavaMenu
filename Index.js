@@ -2,7 +2,7 @@
 
 var debounce = false;
 var state = false;
-const icon_wrapper = document.getElementsByClassName("icon-wrapper")
+const icon_wrapper = document.getElementsByClassName("icon-wrapper");
 const menu = document.getElementsByClassName("menu")[0];
 const side_arrow_button = document.getElementById("side-arrow");
 const side_arrow_image = side_arrow_button.childNodes[1];
@@ -57,6 +57,11 @@ function open() {
         // Give icon wrappers their properties
         for (i = 0; i < icon_wrapper.length; i++) {
             icon_wrapper[i].classList.remove("disabled");
+        }
+
+        // Give icon wrapper spans their properties
+        for(i = 0; i < icon_wrapper.length; i++) {
+            icon_wrapper[i].children[1].style.display = "inline";
         }
     }, 35)
 
