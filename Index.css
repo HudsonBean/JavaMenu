@@ -59,21 +59,12 @@ body {
     font-weight: 100rem;
     text-transform: uppercase;
     flex: 1;
-    text-align: center;
+    text-align: left;
     color: black;
     font-size: 1.69rem;
     transition: all 0.15s ease;
     position: relative;
-}
-.icon-wrapper span::before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 6.9%;
-    width: 0;
-    height: 1.5px;
-    background-color: black;
-    transition: all 0.15s ease;
+    margin-left: 0.5rem;
 }
 .icon-wrapper:nth-child(1) {
     border-top-right-radius: 30px;
@@ -96,13 +87,6 @@ body {
     color: white;
     font-size: 2rem;
     text-shadow: 0 0 10px white;
-}
-.icon-wrapper:hover span::before {
-    content: "";
-    width: 85%;
-    height: 1.5px;
-    background-color: white;
-    box-shadow: 0 0 10px white;
 }
 
 #side-arrow {
