@@ -66,6 +66,9 @@ body {
     position: relative;
     margin-left: 0.5rem;
 }
+.icon-wrapper img {
+    transition: all 0.15s ease;
+}
 .icon-wrapper:nth-child(1) {
     border-top-right-radius: 30px;
     border-top-left-radius: 30px;
@@ -130,9 +133,6 @@ body {
 }
 .disabled {
     pointer-events: none;
-}
-.open-side-arrow {
-
 }
 .open-side-arrow-image {
     animation: 0.25s ease 0s arrowRotateBack forwards;

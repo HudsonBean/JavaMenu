@@ -24,7 +24,38 @@ function bootstrap() {
 }
 
 function close() {
+    
+    // Give the arrow image its properties
+    side_arrow_image.style.width = "30px";
+    side_arrow_image.style.height = "30px";
+    side_arrow_image.style.filter = "invert(1) drop-shadow(0 0 5px white)";
 
+    // Give menu its properties
+    menu.classList.remove("open");
+
+    // Give icon wrappers their properties
+    for (i = 0; i < icon_wrapper.length; i++) {
+        icon_wrapper[i].classList.remove("open-icon-wrapper");
+        icon_wrapper[i].classList.add("disabled");
+    }
+
+    // Give the arrow image its properties
+    side_arrow_image.style.width = "28px";
+    side_arrow_image.style.height = "28px";
+    side_arrow_image.style.filter = "";
+    side_arrow_button.style.transform = "rotateZ(0deg)"
+    side_arrow_image.classList.remove("open-side-arrow-image");
+
+    // Give icon wrappers their properties
+    for (i = 0; i < icon_wrapper.length; i++) {
+        icon_wrapper[i].classList.remove("disabled");
+    }
+
+    // Give icon wrapper spans their properties
+    for(i = 0; i < icon_wrapper.length; i++) {
+        icon_wrapper[i].children[1].style.fontSize = 0;
+        icon_wrapper[i].children[1].style.display = "none";
+    }
 }
 
 function open() {
@@ -62,6 +93,7 @@ function open() {
         // Give icon wrapper spans their properties
         for(i = 0; i < icon_wrapper.length; i++) {
             icon_wrapper[i].children[1].style.display = "inline";
+            icon_wrapper[i].children[1].style.fontSize = "1.69rem";
         }
     }, 35)
 
@@ -75,8 +107,10 @@ side_arrow_button.onclick = () => {
 
         if(!state) { // Menu is closed
             open(); // Open the menu
+            state = true;
         } else { // Menu is open
             close(); // Close the menu
+            state = false;
         }
 
         debounce = false;
