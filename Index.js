@@ -23,23 +23,16 @@ function bootstrap() {
     fixImageDrag();
 }
 
-// Connections
+function close() {
 
-side_arrow_button.onclick = () => {
+}
 
-    // Give the side arrow its properties
-    side_arrow_button.classList.add("disabled");
-   side_arrow_button.style.width = "2.5rem";
-   side_arrow_button.style.height = "2.5rem";
-   side_arrow_button.style.backgroundColor = "rgb(30,30,30)";
-   side_arrow_button.style.border = "5px solid white";
-   side_arrow_button.style.boxShadow = "0 0 10px white";
-   side_arrow_button.style.marginLeft = "0rem";
-   
-   // Give the arrow image its properties
+function open() {
+    // Give the arrow image its properties
     side_arrow_image.style.width = "30px";
     side_arrow_image.style.height = "30px";
     side_arrow_image.style.filter = "invert(1) drop-shadow(0 0 5px white)";
+    side_arrow_image.classList.add("open-side-arrow-image");
 
     // Give menu its properties
     menu.classList.add("open");
@@ -50,6 +43,39 @@ side_arrow_button.onclick = () => {
         icon_wrapper[i].classList.add("disabled");
     }
 
+    setTimeout(() => {
+        // Finish up properties since I tecnhically animated this with js
+        
+
+        // Give the arrow image its properties
+        side_arrow_image.style.width = "28px";
+        side_arrow_image.style.height = "28px";
+        side_arrow_image.style.filter = "";
+        side_arrow_button.style.transform = "rotateZ(180deg)"
+        side_arrow_image.classList.remove("open-side-arrow-image");
+
+        // Give icon wrappers their properties
+        for (i = 0; i < icon_wrapper.length; i++) {
+            icon_wrapper[i].classList.remove("disabled");
+        }
+    }, 35)
+
+}
+
+// Connections
+
+side_arrow_button.onclick = () => {
+    if (!debounce) {
+        debounce = true;
+
+        if(!state) { // Menu is closed
+            open(); // Open the menu
+        } else { // Menu is open
+            close(); // Close the menu
+        }
+
+        debounce = false;
+    }
 }
 
 // Main
