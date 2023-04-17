@@ -28,6 +28,7 @@ function bootstrap() {
 side_arrow_button.onclick = () => {
 
     // Give the side arrow its properties
+    side_arrow_button.classList.add("disabled");
    side_arrow_button.style.width = "2.5rem";
    side_arrow_button.style.height = "2.5rem";
    side_arrow_button.style.backgroundColor = "rgb(30,30,30)";
